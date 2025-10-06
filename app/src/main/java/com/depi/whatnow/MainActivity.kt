@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadNews () {
+        // make this in viewModel
         val reto = Retrofit
             .Builder()
             .baseUrl("https://newsapi.org")
