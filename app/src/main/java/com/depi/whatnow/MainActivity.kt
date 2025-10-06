@@ -18,7 +18,7 @@ import retrofit2.create
 
 class MainActivity : AppCompatActivity() {
     //https://newsapi.org
-
+    //test github
    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
