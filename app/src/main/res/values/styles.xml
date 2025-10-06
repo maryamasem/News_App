@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TVStyle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/ar_one_sans_medium</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+</resources>
