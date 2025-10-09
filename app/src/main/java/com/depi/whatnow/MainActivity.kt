@@ -1,79 +1,91 @@
 package com.depi.whatnow
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.depi.whatnow.databinding.ActivityMainBinding
-import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 
 class MainActivity : AppCompatActivity() {
-    //https://newsapi.org
-    //test for github
-   private lateinit var binding: ActivityMainBinding
+
+    private lateinit var binding: ActivityMainBinding
+    private var categorySelected: String = "general"
+    private lateinit var adapter: NewsAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        // قراءة الفئة المرسلة من Intent (لو مفيش: default = "general")
+        categorySelected = intent.getStringExtra("category") ?: "general"
+
+        setupRecycler()
         loadNews()
 
-        binding.swipeRefresh.setOnRefreshListener { loadNews() }
+        binding.swipeRefresh.setOnRefreshListener {
+            loadNews()
+        }
     }
 
-    private fun loadNews () {
-        // make this in viewModel
-        val reto = Retrofit
-            .Builder()
-            .baseUrl("https://newsapi.org")
+    private fun setupRecycler() {
+        adapter = NewsAdapter { article ->
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(article.url))
+            startActivity(intent)
+        }
+        binding.newsList.layoutManager = LinearLayoutManager(this)
+        binding.newsList.adapter = adapter
+    }
+
+    private fun loadNews() {
+        binding.progress.isVisible = true
+        binding.tvError.isVisible = false
+
+        val retrofit = Retrofit.Builder()
+            .baseUrl("https://newsapi.org/") // << مهم: تأكد من الـ slash في الآخر
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-        val c = reto.create(NewsCallable::class.java)
-        c.getNews().enqueue(object : Callback<News>{
-            override fun onResponse(
-                call: Call<News?>,
-                response: Response<News?>
-            ) {
-                val news = response.body()
-                val articles = news?.articles!!
-                //Log.d("trace", "Article: $articles")
-                showNews(articles)
-                binding.progress.isVisible = false
-                binding.swipeRefresh.isRefreshing = false
+        val api = retrofit.create(NewsCallable::class.java)
 
-            }
+        api.getNewsByCategory(category = categorySelected)
+            .enqueue(object : Callback<News> {
+                override fun onResponse(call: Call<News>, response: Response<News>) {
+                    binding.progress.isVisible = false
+                    binding.swipeRefresh.isRefreshing = false
 
-            override fun onFailure(
-                call: Call<News?>,
-                t: Throwable
-            ) {
-                //Log.d("trace", "Error: ${t.message}")
-                binding.progress.isVisible = false
-                binding.swipeRefresh.isRefreshing = false
+                    if (response.isSuccessful) {
+                        val articles = response.body()?.articles ?: arrayListOf()
+                        adapter.submitList(articles)
+                    } else {
+                        binding.tvError.text = "Failed to load: ${response.code()}"
+                        binding.tvError.isVisible = true
+                    }
+                }
 
-
-
-            }
-        })
-    }
-
-    private fun showNews (articles: ArrayList<Article>){
-        val adapter = NewsAdapter(this, articles)
-        binding.newsList.adapter = adapter
+                override fun onFailure(call: Call<News>, t: Throwable) {
+                    binding.progress.isVisible = false
+                    binding.swipeRefresh.isRefreshing = false
+                    binding.tvError.text = "Network error: ${t.message}"
+                    binding.tvError.isVisible = true
+                }
+            })
     }
 }

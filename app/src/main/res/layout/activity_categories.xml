@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/categories_root"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".CategoriesActivity">
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:background="@drawable/header_bg"
+        android:gravity="center"
+        android:paddingTop="12dp">
+
+        <TextView
+            android:id="@+id/headerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="News App"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:letterSpacing="0.02" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pick your category of interest"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="18dp"
+            android:gravity="center" />
+
+        <GridLayout
+            android:id="@+id/categoriesGrid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="2"
+            android:alignmentMode="alignMargins"
+            android:useDefaultMargins="true"
+            android:layout_gravity="center">
+
+            <!-- Sports -->
+            <LinearLayout
+                android:id="@+id/btnSports"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/category_bg_sports"
+                android:padding="12dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:id="@+id/ic_sports"
+                    android:src="@drawable/ic_sports"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:contentDescription="Sports" />
+
+                <TextView
+                    android:id="@+id/tvSportsLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sports"
+                    android:textSize="16sp"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+            <!-- Politics -->
+            <LinearLayout
+                android:id="@+id/btnPolitics"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/category_bg_politics"
+                android:padding="12dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:id="@+id/ic_politics"
+                    android:src="@drawable/ic_politics"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:contentDescription="Politics" />
+
+                <TextView
+                    android:id="@+id/tvPoliticsLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Politics"
+                    android:textSize="16sp"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+            <!-- Health -->
+            <LinearLayout
+                android:id="@+id/btnHealth"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/category_bg_health"
+                android:padding="12dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:id="@+id/ic_health"
+                    android:src="@drawable/ic_health"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:contentDescription="Health" />
+
+                <TextView
+                    android:id="@+id/tvHealthLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Health"
+                    android:textSize="16sp"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+            <!-- Business -->
+            <LinearLayout
+                android:id="@+id/btnBusiness"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/category_bg_business"
+                android:padding="12dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:id="@+id/ic_business"
+                    android:src="@drawable/ic_business"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:contentDescription="Business" />
+
+                <TextView
+                    android:id="@+id/tvBusinessLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Business"
+                    android:textSize="16sp"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+        </GridLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

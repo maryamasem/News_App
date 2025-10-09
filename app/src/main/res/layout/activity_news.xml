@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/news_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    tools:context=".MainActivity">
+    tools:context=".NewsActivity"
+    android:background="#FFFFFF">
 
-    <!-- Swipe to refresh -->
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipeRefresh"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!-- RecyclerView for news list -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/newsList"
             android:layout_width="match_parent"
@@ -25,7 +23,6 @@
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-    <!-- Progress bar for loading -->
     <ProgressBar
         android:id="@+id/progress"
         style="?android:attr/progressBarStyleLarge"
@@ -34,7 +31,6 @@
         android:layout_gravity="center"
         android:visibility="gone" />
 
-    <!-- Error message -->
     <TextView
         android:id="@+id/tvError"
         android:layout_width="wrap_content"
