@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -9,30 +8,37 @@
     android:orientation="vertical"
     tools:context=".SettingActivity">
 
-    <Toolbar
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        app:title="@string/settings"
+        app:titleTextColor="@color/white"
         android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_height="?actionBarSize"
+        android:background="#29562D"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         android:title="@string/settings"
-        android:titleTextColor="@color/white"
-        android:background="#29562D"/>
+        android:titleTextColor="@color/white" />
 
 
     <TextView
-        android:paddingTop="16dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/choose_the_country"
         android:textSize="20sp"
-        android:textStyle="bold"
-        android:text="@string/choose_the_country"/>
+        android:textStyle="bold" />
 
     <RadioGroup
         android:id="@+id/countries_rg"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/eg_btn"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
 
         <RadioButton
             android:id="@+id/eg_btn"
@@ -41,19 +47,26 @@
             android:text="@string/egy" />
 
         <RadioButton
+            android:id="@+id/us_rb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/us"
-            android:id="@+id/us_rb"/>
+            android:text="@string/us" />
 
 
         <RadioButton
             android:id="@+id/uk_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/uk"/>
-
+            android:text="@string/uk" />
 
     </RadioGroup>
+
+    <Button
+        android:id="@+id/save_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="#29562D"
+        android:text="@string/save_country" />
 
 </LinearLayout>
