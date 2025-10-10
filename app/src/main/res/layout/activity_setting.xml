@@ -14,25 +14,28 @@
         app:titleTextColor="@color/white"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
-        android:background="#29562D"
+        android:background="@drawable/header_bg"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         android:title="@string/settings"
-        android:titleTextColor="@color/white" />
+        android:titleTextColor="@color/white"/>
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingStart="16dp"
+        android:layout_marginTop="20dp"
         android:paddingTop="16dp"
         android:paddingEnd="16dp"
         android:text="@string/choose_the_country"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
 
     <RadioGroup
+        android:layout_marginTop="20dp"
         android:id="@+id/countries_rg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -44,29 +47,36 @@
             android:id="@+id/eg_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/egy" />
+            android:text="@string/egy"
+            android:buttonTint="#388E3C"/>
 
         <RadioButton
+            android:layout_marginTop="20dp"
             android:id="@+id/us_rb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/us" />
+            android:text="@string/us"
+            android:buttonTint="#388E3C"/>
 
 
         <RadioButton
+            android:layout_marginTop="20dp"
             android:id="@+id/uk_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/uk" />
+            android:text="@string/uk"
+            android:buttonTint="#388E3C"/>
 
     </RadioGroup>
 
     <Button
+        android:layout_marginTop="20dp"
         android:id="@+id/save_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:backgroundTint="#29562D"
-        android:text="@string/save_country" />
+        android:backgroundTint="#388E3C"
+        android:text="@string/save_country"
+        android:textColor="@color/white"/>
 
 </LinearLayout>
