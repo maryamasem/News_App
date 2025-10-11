@@ -1,8 +1,10 @@
 package com.depi.whatnow
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -15,6 +17,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.Url
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,14 +30,12 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        // قراءة الفئة المرسلة من Intent (لو مفيش: default = "general")
         categorySelected = intent.getStringExtra("category") ?: "general"
 
         setupRecycler()
@@ -43,6 +44,9 @@ class MainActivity : AppCompatActivity() {
         binding.swipeRefresh.setOnRefreshListener {
             loadNews()
         }
+
+
+
     }
 
     private fun setupRecycler() {
@@ -58,14 +62,17 @@ class MainActivity : AppCompatActivity() {
         binding.progress.isVisible = true
         binding.tvError.isVisible = false
 
+        val pref = getSharedPreferences("AppPrefs", MODE_PRIVATE)
+        val country = pref.getString("country", "us") ?: "us"
+
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://newsapi.org/") // << مهم: تأكد من الـ slash في الآخر
+            .baseUrl("https://newsapi.org/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
         val api = retrofit.create(NewsCallable::class.java)
 
-        api.getNewsByCategory(category = categorySelected)
+        api.getNewsByCategory(category = categorySelected, country = country)
             .enqueue(object : Callback<News> {
                 override fun onResponse(call: Call<News>, response: Response<News>) {
                     binding.progress.isVisible = false
@@ -79,7 +86,6 @@ class MainActivity : AppCompatActivity() {
                         binding.tvError.isVisible = true
                     }
                 }
-
                 override fun onFailure(call: Call<News>, t: Throwable) {
                     binding.progress.isVisible = false
                     binding.swipeRefresh.isRefreshing = false
