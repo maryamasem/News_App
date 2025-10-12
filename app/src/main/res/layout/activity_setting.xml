@@ -15,10 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         android:background="@drawable/header_bg"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        android:title="@string/settings"
         android:titleTextColor="@color/white"/>
 
 
@@ -39,15 +36,15 @@
         android:id="@+id/countries_rg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:checkedButton="@id/eg_btn"
+        android:checkedButton="@id/us_rb"
         android:paddingStart="16dp"
         android:paddingEnd="16dp">
 
         <RadioButton
-            android:id="@+id/eg_btn"
+            android:id="@+id/egy_rb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/egy"
+            android:text="@string/eg"
             android:buttonTint="#388E3C"/>
 
         <RadioButton
@@ -61,7 +58,7 @@
 
         <RadioButton
             android:layout_marginTop="20dp"
-            android:id="@+id/uk_btn"
+            android:id="@+id/uk_rb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/uk"

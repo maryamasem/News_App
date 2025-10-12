@@ -9,6 +9,7 @@
     android:background="#FFFFFF"
     tools:context=".CategoriesActivity">
    <androidx.appcompat.widget.Toolbar
+
        android:layout_width="match_parent"
        android:layout_height="?attr/actionBarSize"
        android:background="@drawable/header_bg"
@@ -16,6 +17,7 @@
        app:titleTextColor="#FFFFFF"
        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
        android:id="@+id/toolbar"
+
 
        />
 

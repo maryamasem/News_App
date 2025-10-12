@@ -3,6 +3,7 @@ package com.depi.whatnow
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -50,13 +51,17 @@ class NewsActivity : AppCompatActivity() {
 
         val category = intent.getStringExtra("category") ?: "general"
 
+        val pref = getSharedPreferences("AppPrefs", MODE_PRIVATE)
+        val country = pref.getString("country", "us") ?: "us"
+
+
         val retrofit = Retrofit.Builder()
             .baseUrl("https://newsapi.org/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
         val api = retrofit.create(NewsCallable::class.java)
-        api.getNewsByCategory(category = category).enqueue(object : Callback<News> {
+        api.getNewsByCategory(category = category, country = country).enqueue(object : Callback<News> {
             override fun onResponse(call: Call<News>, response: Response<News>) {
                 binding.progress.isVisible = false
                 binding.swipeRefresh.isRefreshing = false
