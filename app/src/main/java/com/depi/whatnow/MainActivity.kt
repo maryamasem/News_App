@@ -62,7 +62,6 @@ class MainActivity : AppCompatActivity() {
             .baseUrl("https://newsapi.org/") // << مهم: تأكد من الـ slash في الآخر
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-
         val api = retrofit.create(NewsCallable::class.java)
 
         api.getNewsByCategory(category = categorySelected)

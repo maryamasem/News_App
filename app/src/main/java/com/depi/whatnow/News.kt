@@ -5,7 +5,9 @@ data class News(
 )
 
 data class Article(
-    val title: String,
-    val url: String,
-    val urlToImage: String?
+    val id :String= "",
+    val title: String="",
+    val url: String="",
+    val urlToImage: String?="",
+    var isFavorite: Boolean = false
 )

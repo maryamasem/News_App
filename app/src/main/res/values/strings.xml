@@ -6,4 +6,7 @@
     <string name="us">US</string>
     <string name="uk">UK</string>
     <string name="save_country">Save</string>
+    <string name="already_a_user"><u>Already a user?</u></string>
+    <string name="forgot_your_password"><u>Forgot your password?</u></string>
+    <string name="new_user"><u>New User?</u></string>
 </resources>

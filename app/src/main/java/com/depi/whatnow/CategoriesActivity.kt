@@ -64,7 +64,7 @@ class CategoriesActivity : AppCompatActivity() {
             }
             R.id.favorites ->{
                 Toast.makeText(this, "favorites", Toast.LENGTH_SHORT).show()
-              //  startActivity(Intent(this,favoritesActivity::class.java))
+               startActivity(Intent(this, FavoriteActivity::class.java))
             }
         }
         return super.onOptionsItemSelected(item)

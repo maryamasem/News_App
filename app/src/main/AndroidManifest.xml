@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
     <!-- صلاحية الإنترنت مطلوبة للـ Retrofit -->
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -16,23 +15,27 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-
-        <!-- الصفحة الرئيسية (CategoriesActivity) -->
+        <activity
+            android:name=".FavoriteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignUp"
+            android:exported="false" /> <!-- الصفحة الرئيسية (CategoriesActivity) -->
         <activity
             android:name=".CategoriesActivity"
             android:exported="true"> <!-- لازم true لأن فيها intent-filter -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- صفحة الأخبار -->
+        </activity> <!-- صفحة الأخبار -->
         <activity
             android:name=".NewsActivity"
-            android:exported="false" />
-
-        <!-- صفحة الإعدادات -->
+            android:exported="false" /> <!-- صفحة الإعدادات -->
         <activity
             android:name=".SettingActivity"
             android:exported="false" />
@@ -40,7 +43,6 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-
     </application>
 
 </manifest>
