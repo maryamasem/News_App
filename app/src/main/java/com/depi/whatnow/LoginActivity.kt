@@ -15,7 +15,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        val binding= ActivityLoginBinding.inflate(layoutInflater)
+        val binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -24,16 +24,17 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.newUserTv.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, SignUp::class.java))
             finish()
         }
+
         binding.loginBtn.setOnClickListener {
-            val email =binding.emailEt.text.toString()
-            val password=binding.passEt.text.toString()
-            if (email.isBlank()||password.isBlank())
+            val email = binding.emailEt.text.toString()
+            val password = binding.passEt.text.toString()
+            if (email.isBlank() || password.isBlank())
                 Toast.makeText(this, "Missing Field", Toast.LENGTH_SHORT).show()
-            else{
-                binding.loadingProgress.isVisible=true
+            else {
+                binding.loadingProgress.isVisible = true
 //                login logic()
             }
         }

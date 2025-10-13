@@ -6,13 +6,23 @@
     <string name="us">US</string>
     <string name="uk">UK</string>
     <string name="save_country">Save</string>
-    <string name="already_a_user"><u>Already a user?</u></string>
+    <string name="already_a_user"><u>Already have an account?</u></string>
     <string name="forgot_your_password"><u>Forgot your password?</u></string>
-    <string name="new_user"><u>New User?</u></string>
+    <string name="new_user"><u>New here? Create an account</u></string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="sign_up">Sign Up</string>
     <string name="log_in">Log in</string>
     <string name="no_data_added">No Data Added</string>
+    <string name="error_loading_news">Error loading news.</string>
+    <string name="pick_your_category_of_interest">Pick your category of interest</string>
+    <string name="sports">Sports</string>
+    <string name="politics">Politics</string>
+    <string name="health">Health</string>
+    <string name="business">Business</string>
+    <string name="entertainment">Entertainment</string>
+    <string name="technology">Technology</string>
+    <string name="create_account">Create Account</string>
+    <string name="welcome_back">Welcome Back 👋</string>
 </resources>

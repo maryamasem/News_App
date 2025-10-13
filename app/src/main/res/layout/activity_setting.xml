@@ -18,7 +18,6 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         android:titleTextColor="@color/white"/>
 
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -45,7 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/eg"
-            android:buttonTint="#388E3C"/>
+            android:buttonTint="#009688"/>
 
         <RadioButton
             android:layout_marginTop="20dp"
@@ -53,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/us"
-            android:buttonTint="#388E3C"/>
+            android:buttonTint="#009688"/>
 
 
         <RadioButton
@@ -62,7 +61,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/uk"
-            android:buttonTint="#388E3C"/>
+            android:buttonTint="#009688"/>
 
     </RadioGroup>
 
@@ -72,7 +71,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:backgroundTint="#388E3C"
+        android:backgroundTint="#009688"
         android:text="@string/save_country"
         android:textColor="@color/white"/>
 

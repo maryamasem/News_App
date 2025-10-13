@@ -43,6 +43,14 @@ class CategoriesActivity : AppCompatActivity() {
         binding.btnPolitics.setOnClickListener {
             openCategory("politics")
         }
+
+        binding.btnEntertainment.setOnClickListener {
+            openCategory("entertainment")
+        }
+
+        binding.btnTech.setOnClickListener {
+            openCategory("technology")
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

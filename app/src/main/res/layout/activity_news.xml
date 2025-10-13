@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/news_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NewsActivity"
-    android:background="#FFFFFF">
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    tools:context=".NewsActivity">
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        ads:adSize="BANNER"
+        android:layout_gravity="center"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111" />
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipeRefresh"
@@ -16,8 +27,8 @@
             android:id="@+id/newsList"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="8dp"
             android:clipToPadding="false"
+            android:padding="8dp"
             android:scrollbars="vertical"
             tools:listitem="@layout/item_news" />
 
@@ -35,11 +46,10 @@
         android:id="@+id/tvError"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Error loading news."
+        android:layout_gravity="center"
+        android:padding="8dp"
+        android:text="@string/error_loading_news"
         android:textColor="#777777"
         android:textSize="16sp"
-        android:layout_gravity="center"
-        android:visibility="gone"
-        android:padding="8dp" />
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+        android:visibility="gone" />
+</LinearLayout>

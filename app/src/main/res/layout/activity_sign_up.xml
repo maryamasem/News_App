@@ -6,86 +6,94 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="24dp"
+    android:background="#F9FAFB"
     tools:context=".SignUp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/create_account"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#2C3E50"
+        android:layout_marginBottom="24dp" />
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@android:color/darker_gray"
-        android:layout_marginTop="20dp"
-        android:paddingTop="20dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:textColorHint="@color/white">
+        app:boxStrokeColor="#90CAF9"
+        app:hintTextColor="@color/black">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/email_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/email"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:textColor="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
-
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@android:color/darker_gray"
-        android:paddingTop="16dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:textColorHint="@color/white">
+        android:layout_marginTop="16dp"
+        app:boxStrokeColor="@color/lightBlue">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/pass_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/password"
-            android:inputType="textEmailAddress" />
+            android:inputType="textPassword"
+            android:textColor="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@android:color/darker_gray"
-        android:paddingTop="16dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:textColorHint="@color/white">
+        android:layout_marginTop="16dp"
+        app:boxStrokeColor="@color/lightBlue">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/confirm_pass_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/confirm_password"
-            android:inputType="textEmailAddress" />
+            android:inputType="textPassword"
+            android:textColor="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
-
 
     <Button
         android:id="@+id/signup_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
         android:layout_marginTop="32dp"
-        android:text="@string/sign_up" />
+        android:backgroundTint="@color/lightBlue"
+        android:text="@string/sign_up"
+        android:textColor="@android:color/white"
+        android:padding="12dp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp" />
 
     <TextView
         android:id="@+id/already_user_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
         android:text="@string/already_a_user"
-        android:textColor="@android:color/holo_blue_light" />
+        android:textColor="@color/lightBlue"
+        android:textSize="14sp"
+        android:layout_marginBottom="24dp" />
 
     <ProgressBar
         android:id="@+id/loading_progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:visibility="invisible"
-        tools:visibility="visible"/>
+        android:visibility="gone"
+        tools:visibility="visible" />
+
 </LinearLayout>
