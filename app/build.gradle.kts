@@ -45,6 +45,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.play.services.ads.api)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -66,5 +67,6 @@ dependencies {
 
     //Google adMob
     implementation("com.google.android.gms:play-services-ads:24.7.0")
+
 
 }

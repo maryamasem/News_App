@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:gravity="center"
-        android:shadowColor="#4F9E53"
+        android:shadowColor="#009688"
         android:shadowDx="8"
         android:shadowRadius="2"
         android:text="@string/no_data_added"
