@@ -6,4 +6,12 @@
         <item name="android:fontFamily">@font/ar_one_sans_medium</item>
         <item name="android:textColor">@color/white</item>
     </style>
+
+    <style name="categoryStyle">
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:elevation">4dp</item>
+    </style>
 </resources>
