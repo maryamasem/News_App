@@ -1,12 +1,11 @@
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Article_container2"
     android:layout_width="match_parent"
     android:layout_height="140dp"
     android:layout_margin="4dp"
     app:cardCornerRadius="20dp"
-    android:id="@+id/Article_container2"
     app:cardElevation="6dp"
     app:cardUseCompatPadding="true">
 
@@ -14,15 +13,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
         <ImageView
             android:id="@+id/aritcle_image2"
             android:layout_width="140dp"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             tools:src="@drawable/ic_launcher_background" />
 
         <View
@@ -30,10 +28,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/text_gradient"
-            app:layout_constraintStart_toEndOf="@id/aritcle_image2"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintStart_toEndOf="@id/aritcle_image2"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/title_tv2"
@@ -41,17 +39,17 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:layout_marginEnd="12dp"
-            android:textColor="@android:color/white"
-            android:textStyle="bold"
-            android:textSize="15sp"
-            android:maxLines="3"
             android:ellipsize="end"
+            android:maxLines="3"
             android:shadowColor="#80000000"
             android:shadowRadius="8"
-            app:layout_constraintTop_toTopOf="parent"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/aritcle_image2"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/aritcle_image2"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="Israel deports Greta Thunberg and 170 Gaza flotilla activists - BBC" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

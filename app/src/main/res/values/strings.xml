@@ -9,4 +9,10 @@
     <string name="already_a_user"><u>Already a user?</u></string>
     <string name="forgot_your_password"><u>Forgot your password?</u></string>
     <string name="new_user"><u>New User?</u></string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="log_in">Log in</string>
+    <string name="no_data_added">No Data Added</string>
 </resources>

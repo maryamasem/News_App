@@ -44,9 +44,6 @@ class MainActivity : AppCompatActivity() {
         binding.swipeRefresh.setOnRefreshListener {
             loadNews()
         }
-
-
-
     }
 
     private fun setupRecycler() {

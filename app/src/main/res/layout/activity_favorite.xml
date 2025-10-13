@@ -16,7 +16,7 @@
         android:shadowColor="#4F9E53"
         android:shadowDx="8"
         android:shadowRadius="2"
-        android:text="No Data Added"
+        android:text="@string/no_data_added"
         android:textColor="@color/black"
         android:textSize="24sp"
         android:layout_gravity="center"

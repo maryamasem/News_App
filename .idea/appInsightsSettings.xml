@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.depi.whatnow" />
+                  <option name="mobileSdkAppId" value="1:346727847917:android:8c216dcb584c3f1bda79e4" />
+                  <option name="projectId" value="what-now-87cdd" />
+                  <option name="projectNumber" value="346727847917" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
