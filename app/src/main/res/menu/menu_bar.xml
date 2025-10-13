@@ -4,7 +4,7 @@
     <item
         android:title="favorites"
         android:id="@+id/favorites"
-        android:icon="@drawable/baseline_star_border_24"
+        android:icon="@drawable/baseline_favorite_24"
         app:showAsAction="always"/>
     <item
         android:id="@+id/settings"

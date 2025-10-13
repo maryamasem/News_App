@@ -3,11 +3,14 @@ package com.depi.whatnow
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
@@ -25,6 +28,9 @@ class FavoriteActivity : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityFavoriteBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
+        binding.toolbar.overflowIcon?.setTint(ContextCompat.getColor(this,R.color.white))
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -137,5 +143,29 @@ class FavoriteActivity : AppCompatActivity() {
                     .show()
                 //Log.e("Firestore", "Error getting documents", exception)
             }
+    }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_bar,menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.settings ->{
+
+                startActivity(Intent(this, SettingActivity::class.java))
+                return true
+            }
+            R.id.logOut ->{
+                Toast.makeText(this, "Logged out", Toast.LENGTH_SHORT).show()
+                // startActivity(Intent(this,LoginActivity::class.java))
+                return true
+            }
+            R.id.favorites ->{
+
+                startActivity(Intent(this, FavoriteActivity::class.java))
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

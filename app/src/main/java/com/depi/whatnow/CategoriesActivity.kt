@@ -53,7 +53,7 @@ class CategoriesActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.settings ->{
-                Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show()
+
                 startActivity(Intent(this, SettingActivity::class.java))
                 return true
             }
@@ -63,7 +63,7 @@ class CategoriesActivity : AppCompatActivity() {
                 return true
             }
             R.id.favorites ->{
-                Toast.makeText(this, "favorites", Toast.LENGTH_SHORT).show()
+
                startActivity(Intent(this, FavoriteActivity::class.java))
             }
         }

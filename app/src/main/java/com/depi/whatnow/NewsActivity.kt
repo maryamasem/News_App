@@ -4,9 +4,12 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.depi.whatnow.databinding.ActivityNewsBinding
@@ -26,6 +29,10 @@ class NewsActivity : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityNewsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
+        binding.toolbar.overflowIcon?.setTint(ContextCompat.getColor(this,R.color.white))
+
+
 
         adapter = NewsAdapter { article ->
             val url = article.url
@@ -88,5 +95,29 @@ class NewsActivity : AppCompatActivity() {
                 binding.tvError.isVisible = true
             }
         })
+    }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_bar,menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.settings ->{
+
+                startActivity(Intent(this, SettingActivity::class.java))
+                return true
+            }
+            R.id.logOut ->{
+                Toast.makeText(this, "Logged out", Toast.LENGTH_SHORT).show()
+                // startActivity(Intent(this,LoginActivity::class.java))
+                return true
+            }
+            R.id.favorites ->{
+
+                startActivity(Intent(this, FavoriteActivity::class.java))
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
