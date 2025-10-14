@@ -24,7 +24,6 @@ class CategoriesActivity : AppCompatActivity() {
         binding.toolbar.overflowIcon?.setTint(ContextCompat.getColor(this,R.color.white))
 
         fun openCategory(category: String) {
-            Toast.makeText(this, "Loading $category news...", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, NewsActivity::class.java)
             intent.putExtra("category", category)
             startActivity(intent)

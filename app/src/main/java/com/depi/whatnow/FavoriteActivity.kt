@@ -92,7 +92,6 @@ class FavoriteActivity : AppCompatActivity() {
                             binding.noDataTv.visibility = View.VISIBLE
                         }
 
-                        Toast.makeText(this, "Deleted successfully", Toast.LENGTH_SHORT).show()
                     }
                     .addOnFailureListener {
                         Toast.makeText(this, "Failed to delete", Toast.LENGTH_SHORT).show()
@@ -131,9 +130,6 @@ class FavoriteActivity : AppCompatActivity() {
                     binding.recycler2.visibility = View.VISIBLE
                     adapter.update(articles)
                 }
-
-                Toast.makeText(this, "Data loaded successfully ✅", Toast.LENGTH_SHORT).show()
-
             }
             .addOnFailureListener { exception ->
                 binding.progress2.isVisible = false
@@ -160,10 +156,6 @@ class FavoriteActivity : AppCompatActivity() {
                 Toast.makeText(this, "Logged out", Toast.LENGTH_SHORT).show()
                 // startActivity(Intent(this,LoginActivity::class.java))
                 return true
-            }
-            R.id.favorites ->{
-
-                startActivity(Intent(this, FavoriteActivity::class.java))
             }
         }
         return super.onOptionsItemSelected(item)

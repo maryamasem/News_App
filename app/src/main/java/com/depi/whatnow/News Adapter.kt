@@ -32,7 +32,7 @@ class NewsAdapter(
         with(holder.binding) {
             newsTitle.text = article.title
 
-            // تحميل الصورة باستخدام Glide
+
             Glide.with(newsImage.context)
                 .load(article.urlToImage)
                 .error(R.drawable.broken_image)

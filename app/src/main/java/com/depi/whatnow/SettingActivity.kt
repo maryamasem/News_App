@@ -48,7 +48,6 @@ class SettingActivity : AppCompatActivity() {
             editor.putString("country", selectedCountry)
             editor.apply()
 
-            Toast.makeText(this, "Country Saved", Toast.LENGTH_SHORT).show()
             finish()
         }
     }
