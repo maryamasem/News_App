@@ -49,6 +49,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    //implementation("com.google.android.material:material:1.12.0")
+
 
     //retrofit
     implementation("com.squareup.retrofit2:retrofit:3.0.0")
@@ -62,8 +64,14 @@ dependencies {
 
     // swipe refresh layout
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01")
-    implementation(platform("com.google.firebase:firebase-bom:34.3.0"))
+
+    //firebase Bom
+    implementation(platform("com.google.firebase:firebase-bom:34.4.0"))
+    //fireBase Store
     implementation("com.google.firebase:firebase-firestore")
+    //Firebase Auth
+    implementation("com.google.firebase:firebase-auth")
+
 
     //Google adMob
     implementation("com.google.android.gms:play-services-ads:24.7.0")

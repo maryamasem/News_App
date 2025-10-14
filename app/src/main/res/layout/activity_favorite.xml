@@ -6,18 +6,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FavoriteActivity">
+
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
         <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@drawable/header_bg"
-            app:title="Favorites Articles"
-            app:titleTextColor="#FFFFFF"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            android:id="@+id/toolbar"/>
+            app:title="Favorites Articles"
+            app:titleTextColor="#FFFFFF" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -25,6 +27,7 @@
         android:id="@+id/noData_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:shadowColor="#009688"
@@ -33,15 +36,14 @@
         android:text="@string/no_data_added"
         android:textColor="@color/black"
         android:textSize="24sp"
-        android:layout_gravity="center"
         android:textStyle="bold"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_marginTop="?attr/actionBarSize"
         android:id="@+id/recycler2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/fav_list_item" />
 

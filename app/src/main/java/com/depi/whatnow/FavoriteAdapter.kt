@@ -57,7 +57,6 @@ class FavoriteAdapter(val activity: FavoriteActivity):
 
     fun removeItem(position: Int) {
         articles.removeAt(position)
-        Toast.makeText(activity, "Article Deleted Successfully!", Toast.LENGTH_SHORT).show()
         notifyItemRemoved(position)
     }
 

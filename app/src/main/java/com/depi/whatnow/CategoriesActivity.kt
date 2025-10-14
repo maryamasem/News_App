@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import com.depi.whatnow.databinding.ActivityCategoriesBinding
+import com.google.firebase.Firebase
+import com.google.firebase.auth.auth
 
 class CategoriesActivity : AppCompatActivity() {
 
@@ -66,8 +68,10 @@ class CategoriesActivity : AppCompatActivity() {
                 return true
             }
             R.id.logOut ->{
+                Firebase.auth.signOut()
                 Toast.makeText(this, "Logged out", Toast.LENGTH_SHORT).show()
-               // startActivity(Intent(this,LoginActivity::class.java))
+                startActivity(Intent(this,LoginActivity::class.java))
+                finish()
                 return true
             }
             R.id.favorites ->{
