@@ -51,6 +51,12 @@ class LoginActivity : AppCompatActivity() {
         binding.forgotPassCb.setOnClickListener {
             binding.loadingProgress.isVisible = true
             val email = binding.emailEt.text.toString()
+            if (email.isBlank()) {
+                Toast.makeText(this, "Please enter your email first", Toast.LENGTH_SHORT).show()
+                binding.loadingProgress.isVisible = false
+
+                return@setOnClickListener
+            }
             Firebase.auth.sendPasswordResetEmail(email)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
