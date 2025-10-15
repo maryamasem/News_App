@@ -65,7 +65,6 @@ class FavoriteActivity : AppCompatActivity() {
 
     }
 
-
     private fun deleteArticleWithConfirmation(
         article: Article,
         position: Int,
@@ -141,6 +140,7 @@ class FavoriteActivity : AppCompatActivity() {
                 //Log.e("Firestore", "Error getting documents", exception)
             }
     }
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_bar,menu)
         return true

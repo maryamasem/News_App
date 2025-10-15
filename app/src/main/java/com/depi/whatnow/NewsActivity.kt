@@ -65,7 +65,6 @@ class NewsActivity : AppCompatActivity() {
         binding.adView.loadAd(adRequest)
         //Log.d("AdMob", "Ad Loaded Request Sent")
     }
-
     private fun setupRecycler() {
         adapter = NewsAdapter { article ->
             val url = article.url
@@ -81,7 +80,6 @@ class NewsActivity : AppCompatActivity() {
         binding.newsList.adapter = adapter
 
     }
-
     private fun loadNews() {
         binding.progress.isVisible = true
         binding.tvError.isVisible = false
@@ -125,7 +123,6 @@ class NewsActivity : AppCompatActivity() {
                 }
             })
     }
-
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_bar,menu)
