@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.depi.whatnow.databinding.ActivityFavoriteBinding
 import com.google.firebase.Firebase
+import com.google.firebase.auth.auth
 import com.google.firebase.firestore.firestore
 
 class FavoriteActivity : AppCompatActivity() {
@@ -148,13 +149,14 @@ class FavoriteActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.settings ->{
-
                 startActivity(Intent(this, SettingActivity::class.java))
                 return true
             }
             R.id.logOut ->{
+                Firebase.auth.signOut()
                 Toast.makeText(this, "Logged out", Toast.LENGTH_SHORT).show()
-                // startActivity(Intent(this,LoginActivity::class.java))
+                startActivity(Intent(this,LoginActivity::class.java))
+                finishAffinity()
                 return true
             }
         }

@@ -70,7 +70,7 @@ class CategoriesActivity : AppCompatActivity() {
                 Firebase.auth.signOut()
                 Toast.makeText(this, "Logged out", Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this,LoginActivity::class.java))
-                finish()
+                finishAffinity()
                 return true
             }
             R.id.favorites ->{
