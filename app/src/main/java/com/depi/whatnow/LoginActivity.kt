@@ -70,7 +70,7 @@ class LoginActivity : AppCompatActivity() {
                         startActivity(Intent(this, CategoriesActivity::class.java))
                         finish()
                     } else {
-                        Toast.makeText(this, "check your email !!!!!!!!!!!", Toast.LENGTH_SHORT)
+                        Toast.makeText(this, "check your email !!!!!!", Toast.LENGTH_SHORT)
                             .show()
                     }
 
